@@ -1,0 +1,17 @@
+<div class="banner d-flex p-2 justify-content-between">
+  <h1>All Movies</h1>
+</div>
+
+<div class="all-cards">
+<% @movies.each do |movie| %>
+<div class="card mb-3" style="width: 18rem;">
+<img class="card-img-top" src= <%= movie.poster_url %> alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title"><strong><%= movie.title %></strong></h5>
+    <p class="card-text"><%= movie.overview %></p>
+    <p class="card-text"><%= movie.rating %></p>
+    <p class="card-text"></p>
+  </div>
+</div>
+  <% end %>
+</div>
