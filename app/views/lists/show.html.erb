@@ -4,6 +4,7 @@
 
 <div class="movies-grid">
   <% @list.movies.each do |movie| %>
+    <% bookmark = @list.bookmarks.find_by(movie_id: movie.id) %>
     <div class="card-trip">
       <% if movie.poster_url.present? %>
         <img src="<%= movie.poster_url %>" alt="<%= movie.title %>" class="card-trip-image" />
@@ -11,7 +12,10 @@
       <div class="card-trip-infos">
         <div>
           <h2><%= movie.title %></h2>
-          <p><%= truncate(movie.overview, length: 150) %></p>
+          <p><%= movie.overview %></p>
+          <% if bookmark.present? %>
+            <p>Bookmark: <%= bookmark.comment %></p>
+          <% end %>
         </div>
         <h2 class="card-trip-pricing">Rating: <%= movie.rating %></h2>
       </div>
