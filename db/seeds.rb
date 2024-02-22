@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+lists = ['Top Rated Movies', 'Action', 'Thriller', 'Family Favorites']
+
+lists.each do |name|
+  List.find_or_create_by!(name: name)
+end

@@ -1,1 +1,17 @@
-<h1>new list</h1>
+<h1>Add a new List</h1>
+
+
+<div class="te mt-3">
+  <%= form_with model: @list, class: "needs-validation", novalidate: true do |f| %>
+
+    <div class="form-group mb-2">
+      <%= f.label :name, class: "form-label" %>
+      <%= f.text_field :name, class: "form-control", placeholder: "Enter List name " %>
+    </div>
+
+    <div class="boutons">
+      <%= f.submit class: "btn btn-primary" %>
+      <%= link_to "Back to list", lists_path, class: "btn btn-secondary mt-2" %>
+    </div>
+<% end %>
+</div>
