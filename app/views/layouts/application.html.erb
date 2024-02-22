@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <nav>
+      <div class="nav-container">
+        <div class="popcorn-home">
+          <%= link_to image_tag("3418886.png", alt: "Popcorn"), lists_path %>
+        </div>
+          <div class="links-home">
+            <%= link_to 'My Lists', lists_path %>
+            <%= link_to 'New List', new_list_path %>
+        </div>
+      </div>
+  </nav>
   <div class="container">
     <%= yield %>
     </div>

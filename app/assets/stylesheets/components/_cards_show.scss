@@ -1,0 +1,34 @@
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacement entre les cartes */
+  justify-content: center; /* Centre les cartes si elles ne remplissent pas toute la largeur */
+}
+
+.card-trip {
+  flex: 0 1 calc(33.333% - 20px); /* Trois cartes par ligne, ajustez la marge dans le calcul si nécessaire */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Assure que le contenu ne déborde pas de la carte */
+}
+
+.card-trip-image {
+  width: 100%; /* Assure que l'image couvre la largeur de la carte */
+  height: auto; /* Garde le ratio de l'image */
+}
+
+.card-trip-infos {
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  .card-trip {
+    flex: 0 1 calc(50% - 20px); /* Deux cartes par ligne sur les écrans plus petits */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-trip {
+    flex: 0 1 100%; /* Une carte par ligne sur les écrans très petits */
+  }
+}
